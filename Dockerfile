@@ -7,6 +7,13 @@ WORKDIR /app
 # Copia o arquivo pom.xml para que as dependências possam ser baixadas
 COPY pom.xml .
 
+# Copia o script do Maven Wrapper e o diretório .mvn
+COPY mvnw .
+COPY .mvn .mvn
+
+# Garante que o script mvnw seja executável
+RUN chmod +x mvnw
+
 # Copia o código fonte da aplicação
 COPY src ./src
 
