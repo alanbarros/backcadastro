@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    # Nome do serviço, pode ser qualquer um de sua escolha
+    container_name: backcadastro-app
+    # Constrói a imagem Docker a partir do Dockerfile no diretório atual
+    build: .
+    # Mapeia a porta 8080 do container para a porta 8080 da sua máquina local
+    ports:
+      - "8080:8080"
+    # Reinicia o container se ele falhar
+    restart: always
